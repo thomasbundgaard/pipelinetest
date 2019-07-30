@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying DJ....'
-				mvn -v
+				cmd 'mvn -v'
             }
         }
     }
