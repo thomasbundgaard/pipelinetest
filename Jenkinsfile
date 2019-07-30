@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+            maven 'Maven 3.6.0'
+         }
 
     stages {
         stage('Build') {
@@ -10,19 +13,18 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing DJ..'
-                bat 'mvn test'
+                bat 'mvn install'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying DJ....'
-				bat 'mvn verify'
             }
         }
     }
     post {
             always {
-                junit '**/reports/junit/*.xml'
+                junit 'target/surefire-reports/**/*.xml'
             }
         }
 }
