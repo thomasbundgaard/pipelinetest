@@ -1,11 +1,8 @@
 pipeline {
     agent any
-    tools {
-            maven 'Maven 3.6.0'
-         }
+       stages {
 
-    stages {
-        stage('Build') {
+    stage('Build') {
             steps {
                 echo 'Building DJ..'
             }
