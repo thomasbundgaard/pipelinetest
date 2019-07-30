@@ -10,6 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing DJ..'
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
