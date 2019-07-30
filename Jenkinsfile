@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying DJ....'
-				bat 'mvn -v'
+				bat 'mvn verify'
             }
         }
     }
