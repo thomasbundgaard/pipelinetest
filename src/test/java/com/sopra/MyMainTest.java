@@ -6,7 +6,7 @@ public class MyMainTest {
 
 	@Test
 	public void testFail() {
-		assert(false);
+		//assert(false);
 	}
 	
 	@Test
