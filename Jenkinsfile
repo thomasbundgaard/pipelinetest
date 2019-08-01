@@ -7,7 +7,9 @@ pipeline {
             }
         }
         stage('Test') {
-            agent none
+            agent {
+                node none
+            }
             steps {
                 echo 'Testing DJ..'
                 bat 'mvn install'
