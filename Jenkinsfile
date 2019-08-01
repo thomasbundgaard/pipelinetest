@@ -13,6 +13,14 @@ pipeline {
                 bat 'mvn install'
             }
         }
+        stage('run on ubuntu') {
+            agent {
+                label "ubuntuagent"
+            }
+            echo 'run on ubuntu'
+            sh 'ls'
+            sh 'pwd'
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying DJ....'
