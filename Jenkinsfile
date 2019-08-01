@@ -17,9 +17,11 @@ pipeline {
             agent {
                 label "ubuntuagent"
             }
-            echo 'run on ubuntu'
-            sh 'ls'
-            sh 'pwd'
+            steps {
+                echo 'run on ubuntu'
+                sh 'ls'
+                sh 'pwd'
+            }
         }
         stage('Deploy') {
             steps {
