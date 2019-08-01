@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent master
        stages {
         stage('Build') {
             steps {
@@ -7,9 +7,6 @@ pipeline {
             }
         }
         stage('Test') {
-            agent {
-                node none
-            }
             steps {
                 echo 'Testing DJ..'
                 bat 'mvn install'
