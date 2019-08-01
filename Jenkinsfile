@@ -1,13 +1,13 @@
 pipeline {
     agent none
        stages {
-
-    stage('Build') {
+        stage('Build') {
             steps {
                 echo 'Building DJ..'
             }
         }
         stage('Test') {
+            agent none
             steps {
                 echo 'Testing DJ..'
                 bat 'mvn install'
