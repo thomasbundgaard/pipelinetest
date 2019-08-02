@@ -38,8 +38,6 @@ pipeline {
     }
     post {
             always {
-                sh 'pwd'
-                sh 'ls'
                 junit 'target/surefire-reports/**/*.xml'
             }
         }
