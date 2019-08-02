@@ -27,6 +27,7 @@ pipeline {
                 sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
                 sh 'ls'
                 sh 'ls pipelinetest'
+                sh 'rm -rf pipelinetest'
             }
         }
         stage('Deploy') {
