@@ -23,6 +23,7 @@ pipeline {
                 echo 'run on ubuntu'
                 sh 'ls'
                 sh 'pwd'
+                sh 'docker images'
             }
         }
         stage('Deploy') {
