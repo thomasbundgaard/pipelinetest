@@ -17,8 +17,8 @@ pipeline {
         stage('run on ubuntu') {
             agent {
                 label "ubuntu"
-                options { skipDefaultCheckout() }
             }
+            options { skipDefaultCheckout() }
             steps {
                 echo 'run on ubuntu'
                 sh 'ls'
