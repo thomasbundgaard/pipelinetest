@@ -5,7 +5,7 @@ pipeline {
        stages {
         stage('Build') {
             steps {
-                echo 'Building DJ..'
+                echo 'Building DJ now from github..'
             }
         }
         stage('Test') {
