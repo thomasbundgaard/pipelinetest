@@ -29,7 +29,7 @@ pipeline {
                 sh 'ls pipelinetest'
                 sh 'cd builder'
                 sh 'docker build .'
-                sh 'docker ps'
+                sh 'docker images'
                 sh 'cd ..'
                 sh 'rm -rf pipelinetest'
             }
