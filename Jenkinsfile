@@ -24,6 +24,9 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 sh 'docker images'
+                sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
+                sh 'ls'
+                sh 'ls pipelinetest'
             }
         }
         stage('Deploy') {
@@ -34,6 +37,7 @@ pipeline {
     }
     post {
             always {
+                sh 'rm -rf pipelinetest'
                 junit 'target/surefire-reports/**/*.xml'
             }
         }
