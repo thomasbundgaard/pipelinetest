@@ -16,7 +16,7 @@ pipeline {
         }
         stage('run on ubuntu') {
             agent {
-                label "ubuntuagent"
+                label "ubuntu"
             }
             steps {
                 echo 'run on ubuntu'
