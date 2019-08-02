@@ -37,7 +37,8 @@ pipeline {
     }
     post {
             always {
-                sh 'rm -rf pipelinetest'
+                sh 'pwd'
+                sh 'ls'
                 junit 'target/surefire-reports/**/*.xml'
             }
         }
