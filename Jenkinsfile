@@ -27,7 +27,7 @@ pipeline {
                 sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
                 sh 'ls'
                 sh 'ls pipelinetest'
-                sh 'docker build ./builder'
+                sh 'docker build ./pipelinetest/builder'
                 sh 'docker images'
                 sh 'rm -rf pipelinetest'
             }
