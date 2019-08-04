@@ -33,7 +33,9 @@ pipeline {
                 sh 'ls pipelinetest'
                 script {
                     myImg = docker.build (registry + ":$BUILD_NUMBER", "pipelinetest/builder")
-                    myImg.push "$BUILD_NUMBER"
+                    docker.withRegistry(registry, 'docker-login') {
+                        myImg.push "$BUILD_NUMBER"
+                    }
                 }
                 sh 'docker images'
                 sh 'rm -rf pipelinetest'
