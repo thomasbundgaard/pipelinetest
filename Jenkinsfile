@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "docker_hub_account/repository_name"
+        registry = "thomasbundgaard/testrepo"
         registryCredential = 'dockerhub'
     }
     agent {
@@ -31,7 +31,9 @@ pipeline {
                 sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
                 sh 'ls'
                 sh 'ls pipelinetest'
-                sh 'docker build ./pipelinetest/builder'
+                script {
+                    docker.build registry + ":$BUILD_NUMBER"
+                }
                 sh 'docker images'
                 sh 'rm -rf pipelinetest'
             }
