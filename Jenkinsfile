@@ -32,7 +32,7 @@ pipeline {
                 sh 'ls'
                 sh 'ls pipelinetest'
                 script {
-                    docker.build registry + ":$BUILD_NUMBER"
+                    docker.build (registry + ":$BUILD_NUMBER", pipelinetest/builder)
                 }
                 sh 'docker images'
                 sh 'rm -rf pipelinetest'
