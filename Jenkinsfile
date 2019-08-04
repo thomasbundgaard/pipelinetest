@@ -33,7 +33,7 @@ pipeline {
                 sh 'ls pipelinetest'
                 script {
                     myImg = docker.build (registry + ":$BUILD_NUMBER", "pipelinetest/builder")
-                    docker.withRegistry(registry, registryCredential) {
+                    docker.withRegistry([registryCredential, url:""]) {
                         myImg.push "$BUILD_NUMBER"
                     }
                 }
