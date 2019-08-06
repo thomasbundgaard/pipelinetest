@@ -45,8 +45,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying DJ....'
-                bat 'kubectl create deployment my$BUILD_NUMBER-node --image=thomasbundgaard/testrepo:$BUILD_NUMBER'
-                bat 'kubectl expose deployment my$BUILD_NUMBER-node --type=LoadBalancer --port=8080'
+                bat 'kubectl create deployment my"$BUILD_NUMBER"-node --image=thomasbundgaard/testrepo:$BUILD_NUMBER'
+                bat 'kubectl expose deployment my"$BUILD_NUMBER"-node --type=LoadBalancer --port=8080'
             }
         }
     }
