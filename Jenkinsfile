@@ -51,6 +51,9 @@ pipeline {
                 bat "minikube service my$BUILD_NUMBER-node"
             }
         }
+       stage('Integration test') {
+           build job: 'integrationtest/master', parameters: [string(name: 'TARGET_URL', value: "myMultibranc$BUILD_NUMBER")]
+       }
     }
     post {
             always {
