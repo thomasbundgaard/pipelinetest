@@ -53,7 +53,7 @@ pipeline {
         }
        stage('Integration test') {
            steps {
-               build job: 'integrationtest/master', parameters: [string(name: 'TARGET_URL', value: "myMultibranc$BUILD_NUMBER")]
+               build job: 'integrationtest/master', parameters: [string(name: 'TARGET_URL', value: "my$BUILD_NUMBER-node")]
            }
        }
     }
