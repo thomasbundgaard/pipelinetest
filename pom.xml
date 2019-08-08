@@ -20,6 +20,7 @@
   </properties>
 
 <build>
+    <finalName>index</finalName>
     <plugins>
         <plugin>
             <artifactId>maven-war-plugin</artifactId>
@@ -32,6 +33,7 @@
                     </resource>
                 </webResources>
                 <webappDirectory>builder</webappDirectory>
+                <outputDirectory>builder</outputDirectory>
             </configuration>
         </plugin>
     </plugins>
