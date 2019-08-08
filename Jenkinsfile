@@ -31,7 +31,7 @@ pipeline {
                 sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
                 sh 'ls'
                 sh 'ls pipelinetest'
-                sh 'mvn install'
+                sh 'mvn -f pipelinetest clean install'
                 script {
                     myImg = docker.build (registry + ":$BUILD_NUMBER", "pipelinetest/builder")
                     //docker.withRegistry([credentialsId: registryCredential, url:""]) {
