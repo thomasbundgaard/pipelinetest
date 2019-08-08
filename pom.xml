@@ -33,7 +33,7 @@
                     </resource>
                 </webResources>
                 <webappDirectory>builder</webappDirectory>
-                <outputDirectory>builder</outputDirectory>
+                <outputDirectory>pipelinetest/builder</outputDirectory>
             </configuration>
         </plugin>
     </plugins>
