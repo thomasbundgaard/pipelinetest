@@ -31,7 +31,7 @@
                         <filtering>true</filtering>
                     </resource>
                 </webResources>
-                <webappDirectory>/builder</webappDirectory>
+                <webappDirectory>builder</webappDirectory>
             </configuration>
         </plugin>
     </plugins>
