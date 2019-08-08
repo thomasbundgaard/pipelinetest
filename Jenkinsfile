@@ -15,7 +15,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing DJ..'
-                bat 'mvn install'
             }
         }
         stage('run on ubuntu') {
@@ -31,6 +30,7 @@ pipeline {
                 sh 'git clone git@github.com:thomasbundgaard/pipelinetest.git'
                 sh 'ls'
                 sh 'ls pipelinetest'
+                sh 'mvn install'
                 script {
                     myImg = docker.build (registry + ":$BUILD_NUMBER", "pipelinetest/builder")
                     //docker.withRegistry([credentialsId: registryCredential, url:""]) {
