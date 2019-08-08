@@ -24,6 +24,7 @@
         <plugin>
             <artifactId>maven-war-plugin</artifactId>
             <configuration>
+                <webXml>target/web.xml</webXml>
                 <webResources>
                     <resource>
                         <directory>src/main/webapp</directory>
