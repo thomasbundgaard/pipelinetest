@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building DJ now from github..'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
